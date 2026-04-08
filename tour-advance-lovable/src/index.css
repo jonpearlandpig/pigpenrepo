@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 90%;
+  }
+  html { color-scheme: dark; }
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  * { @apply border-zinc-800; }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.zinc.700') transparent;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  nav { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .bg-zinc-950, .bg-zinc-900, .bg-zinc-800 { background: white !important; }
+  .text-zinc-100, .text-zinc-200, .text-zinc-300 { color: black !important; }
+  .border-zinc-800, .border-zinc-700 { border-color: #ddd !important; }
+  .text-zinc-400, .text-zinc-500, .text-zinc-600 { color: #555 !important; }
+}
