@@ -1,0 +1,16 @@
+schema_version: "1.0"
+system_id: PIG_PEN
+classification: canonical_runtime_repository
+canonical_repository: true
+status: active
+owner: Jon Hartman
+may_receive_changes: true
+donor_to: null
+successor: null
+governance_version: "Pearl & Pig Governance v0.2"
+approved_on: "2026-07-25"
+canonical_assets:
+  human_profiles: "Pig Pen v4.4.1"
+  machine_runtime: "pigpen-v5.1.json"
+  controlling_manifest: "Pig Pen Registry v5.2 Canonical Manifest"
+notes: "Two-layer canon. Changes must preserve unique operator IDs and names, authority, rollback, audit, and operator count invariants."
