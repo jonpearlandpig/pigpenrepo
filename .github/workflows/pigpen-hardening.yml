@@ -1,0 +1,22 @@
+name: Pig Pen Hardening
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  harden:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate registry and calculate checksums
+        run: node scripts/harden-pigpen.mjs
+      - name: Upload hardening report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pigpen-hardening-report
+          path: governance/pigpen-hardening-report.json
